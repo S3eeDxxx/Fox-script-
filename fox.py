@@ -11,7 +11,7 @@ os.system('curl -sSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc \
   && sudo apt install ngrok')
 
 # 2️⃣ أمر إضافة التوكن
-os.system('ngrok config add-authtoken 2xuAIS8zlgXDXfYLIOSo5VUXrwf_7CZ6LVvxrpRY2fJ68RW5q')
+os.system('ngrok config add-authtoken 2xu1OkE8eWE7l4mngojGEqBTGz9_7uZi4rtUtJ1WsqvfJHkSi')
 
 # 3️⃣ أمر تشغيل النفق
 os.system('ngrok http http://localhost:3001')
