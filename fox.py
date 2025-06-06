@@ -14,4 +14,4 @@ os.system('curl -sSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc \
 os.system('ngrok config add-authtoken 2xuAIS8zlgXDXfYLIOSo5VUXrwf_7CZ6LVvxrpRY2fJ68RW5q')
 
 # 3️⃣ أمر تشغيل النفق
-os.system('ngrok http --url=luckily-meet-hen.ngrok-free.app 8080')
+os.system('ngrok http http://localhost:3001')
