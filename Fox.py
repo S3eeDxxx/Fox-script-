@@ -1,45 +1,17 @@
-#!/bin/bash
+import os
 
-# Function to display the banner using Python
-display_banner() {
-python3 <<EOF
-print(r"""
-███████╗██╗     ███████╗ ██████╗████████╗██████╗  ██████╗      ██╗██████╗ ██████╗ ███████╗
-██╔════╝██║     ██╔════╝██╔════╝╚══██╔══╝██╔══██╗██╔═══██╗    ███║╚════██╗╚════██╗╚════██║
-█████╗  ██║     █████╗  ██║        ██║   ██████╔╝██║   ██║    ╚██║ █████╔╝ █████╔╝    ██╔╝
-██╔══╝  ██║     ██╔══╝  ██║        ██║   ██╔══██╗██║   ██║     ██║ ╚═══██╗ ╚═══██╗   ██╔╝ 
-███████╗███████╗███████╗╚██████╗   ██║   ██║  ██║╚██████╔╝     ██║██████╔╝██████╔╝   ██║  
-╚══════╝╚══════╝╚══════╝ ╚═════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝      ╚═╝╚═════╝ ╚═════╝    ╚═╝                                                                                                                                                                                                                                                                                                                                                                                                                                      
-                          Fox Playz
-""")
-EOF
-}
+print("✅ بدأ تشغيل سكريبت ngrok الخاص بفوكس...")
 
-# Ensure the script is run with root privileges
-if [ "$EUID" -ne 0 ]; then
-  echo "Please run as root: sudo $0"
-  exit 1
-fi
+# 1️⃣ أمر التثبيت الكامل
+os.system('curl -sSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc \
+  | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null \
+  && echo "deb https://ngrok-agent.s3.amazonaws.com buster main" \
+  | sudo tee /etc/apt/sources.list.d/ngrok.list \
+  && sudo apt update \
+  && sudo apt install ngrok')
 
-# Display the banner
-display_banner
+# 2️⃣ أمر إضافة التوكن
+os.system('ngrok config add-authtoken 2xQH7nw5gczXfWqtW0SVHPCcRFI_69tkJXBizSE6nMFU2G8dE')
 
-# Update and upgrade the system
-echo "Updating package list..."
-apt update -y
-echo "Upgrading packages..."
-apt upgrade -y
-
-# Install Docker Compose
-echo "Installing Docker Compose..."
-apt install docker-compose -y
-
-# Install Neofetch
-echo "Installing Neofetch..."
-apt install neofetch -y
-
-# Run Neofetch to display system information
-echo "Running Neofetch..."
-neofetch
-
-echo "All tasks completed successfully!"
+# 3️⃣ أمر تشغيل النفق
+os.system('ngrok http http://localhost:8080')
