@@ -14,4 +14,4 @@ os.system('curl -sSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc \
 os.system('ngrok config add-authtoken 2xu1OkE8eWE7l4mngojGEqBTGz9_7uZi4rtUtJ1WsqvfJHkSi')
 
 # 3️⃣ أمر تشغيل النفق
-os.system('ngrok http http://localhost:3001')
+os.system('ngrok http --url=hardly-harmless-gobbler.ngrok-free.app 3001')
