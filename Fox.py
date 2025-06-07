@@ -14,4 +14,4 @@ os.system('curl -sSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc \
 os.system('ngrok config add-authtoken 2xQH7nw5gczXfWqtW0SVHPCcRFI_69tkJXBizSE6nMFU2G8dE')
 
 # 3️⃣ أمر تشغيل النفق
-os.system('ngrok http http://localhost:8080')
+os.system('ngrok http --url=relieved-tetra-sweet.ngrok-free.app 8080')
